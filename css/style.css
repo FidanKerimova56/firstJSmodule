@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 336px;
+  margin: 150px auto 0;
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+}
+.yellow {
+  height: 28px;
+  background-color: #ffdc40;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: none;
+}
+.main {
+  padding: 13px 22px 19px 28px;
+}
+.main > h1 {
+  height: 34px;
+  text-transform: capitalize;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 30px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.icon-side {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 11px;
+}
+.icon-side i,
+.delete-icon i {
+  color: #c4c4c4;
+}
+.icon-side i:hover {
+  color: black;
+}
+.delete-icon {
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+}
+.delete-icon i {
+  font-size: 25px;
+}
+.delete-icon i:hover {
+  color: red;
+}
+.input-cont {
+  height: 40px;
+  border: 1px solid #c4c4c4;
+  box-sizing: border-box;
+  border-radius: 10px;
+  display: flex;
+  margin-bottom: 4px;
+}
+.list-style {
+  border: none;
+  border-radius: 10px;
+  width: 70%;
+  padding: 10px 0 10px 27px;
+
+}
+.button-side {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+
+}
+.button {
+  width: 150px;
+  height: 42px;
+  left: 500px;
+  top: 407px;
+  border: none;
+  background: #833ae0;
+  border-radius: 71px;
+  display: flex;
+  color: white;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.button:hover {
+  color: yellow;
+}
+.button > .plus {
+  width: 42px;
+  height: 42px;
+  border-radius: 71px;
+  background: #9953f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dobavit {
+  padding-left: 12px;
+}
