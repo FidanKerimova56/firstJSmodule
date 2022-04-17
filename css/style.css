@@ -35,26 +35,30 @@
 }
 .icon-side {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin-bottom: 11px;
 }
+.icon-side i{
+  padding: 0;
+}
 .icon-side i,
-.delete-icon i {
+i {
   color: #c4c4c4;
 }
 .icon-side i:hover {
   color: black;
 }
-.delete-icon {
+i {
+  height: 38px;
   padding: 0 30px;
   display: flex;
   align-items: center;
-}
-.delete-icon i {
   font-size: 25px;
+  padding-top: 7px;
+  cursor: pointer;
 }
-.delete-icon i:hover {
-  color: red;
+ i:hover {
+  color: #833ae0;
 }
 .input-cont {
   height: 40px;
@@ -69,13 +73,12 @@
   border-radius: 10px;
   width: 70%;
   padding: 10px 0 10px 27px;
-
+  outline: none;
 }
 .button-side {
   display: flex;
   justify-content: center;
   margin-top: 18px;
-
 }
 .button {
   width: 150px;
@@ -106,3 +109,33 @@
 .dobavit {
   padding-left: 12px;
 }
+
+#delete-all{
+  padding: 6px 12px;
+  color: red;
+  border: 1px solid red;
+  outline: none;
+  background-color: white;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  cursor: pointer;
+}
+#delete-all:hover{
+  background-color: red;
+  color: white;
+}
+.filter-storage{
+  margin-top: 18px;
+}
+.filter-storage input{
+  padding: 3px 0 3px 8px;
+}
+.filter-storage i{
+font-size: 17px;
+padding: 0;
+}
+
+

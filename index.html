@@ -1,68 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ToDo List</title>
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
     <div class="container">
-        <div class="yellow"></div>
-        <!-- Main -->
-        <div class="main">
-            <h1>To-do list</h1>
-            <!-- ASC OR DESC -->
-            <div class="icon-side">
-                <a href="">
-                    <i class="fa-solid fa-arrow-down-short-wide"></i>
-                    <i class="fa-solid fa-arrow-up-short-wide"></i>
-                </a>
-            </div>
-            <!-- Input -->
-            <div class="all-inputs">
-             <div class="input-cont">
-                <input class="list-style main-input" type="text">
-                <div class="delete-icon">
-                    <a href="#">
-                        <i class="fa-solid fa-circle-xmark"></i>
-                    </a>
-                </div>
-                
-            </div> 
-            <ul>
-                <li class="input-cont">
-                   <p class="list-style li-value"></p>
-                    <div class="delete-icon">
-                        <a href="#">
-                            <i class="fa-solid fa-circle-xmark"></i>
-                        </a>
-                    </div>
-                </li>
-            </ul>  
-            </div>
-            
-
-            <!-- button -->
-            <div type="submit" class="button-side ">
-              <button class="button">
-                <div class="plus">+</div>
-                <div class="dobavit">Добавить</div>
-            </button>  
-            </div>
-            
+      <div class="yellow"></div>
+      <!-- Main -->
+      <div class="main">
+        <h1>To-do list</h1>
+        <!-- ASC OR DESC -->
+        <div class="icon-side">
+          <div class="delete-all">
+            <button id="delete-all" type="button">Delete All</button>
+          </div>
+          
+          <i class="fa-solid fa-arrow-down-short-wide" id="icon-sorter"></i>
+          <!-- <i class="fa-solid fa-arrow-up-short-wide"></i> -->
         </div>
+        <!-- Input -->
+        <form id="formSubmit">
+          <div class="all-inputs" id="container-todo">
+            <div class="input-cont">
+              <input
+                class="list-style main-input"
+                type="text"
+                id="todo-input"
+                placeholder="please add an item..."
+              />
+              <i class="fa-solid fa-circle-xmark"></i>
+            </div>
+          </div>
+          <ol type="1"></ol>
+          <!-- button -->
+
+          <div class="button-side">
+            <button class="button" id="btn-add">
+              <div class="plus">+</div>
+              <div class="dobavit">Добавить</div>
+            </button>
+          </div>
+
+          <!-- Filter -->
+
+          <div class="filter-storage">
+            <input type="text" placeholder="search item..." id="search" >
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+        </form>
+      </div>
     </div>
-    
-
-
-
-
-
 
     <script src="./js/app.js"></script>
-    <script src="https://kit.fontawesome.com/39529855fe.js" crossorigin="anonymous"></script>
-</body>
+    <script
+      src="https://kit.fontawesome.com/39529855fe.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
