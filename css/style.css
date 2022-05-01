@@ -50,13 +50,18 @@ i {
 }
 i {
   height: 38px;
-  padding: 0 30px;
+  
   display: flex;
   align-items: center;
   font-size: 25px;
   padding-top: 7px;
   cursor: pointer;
 }
+#del{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
  i:hover {
   color: #833ae0;
 }
@@ -112,8 +117,8 @@ i {
 
 #delete-all{
   padding: 6px 12px;
-  color: red;
-  border: 1px solid red;
+  color: #833ae0;
+  border: 1px solid #833ae0;
   outline: none;
   background-color: white;
   border-radius: 6px;
@@ -124,7 +129,7 @@ i {
   cursor: pointer;
 }
 #delete-all:hover{
-  background-color: red;
+  background-color: #833ae0;
   color: white;
 }
 .filter-storage{
@@ -132,10 +137,19 @@ i {
 }
 .filter-storage input{
   padding: 3px 0 3px 8px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  outline: none;
+  border: 1px solid #c4c4c4;
 }
 .filter-storage i{
 font-size: 17px;
 padding: 0;
 }
-
+#pl-11{
+  padding-left: 11px;
+}
 

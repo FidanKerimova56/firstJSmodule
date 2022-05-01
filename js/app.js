@@ -5,6 +5,8 @@ const todoContainer = document.getElementById("container-todo");
 const sortButton = document.getElementById("icon-sorter");
 const searchInput = document.getElementById("search");
 const deleteAllButton = document.getElementById("delete-all");
+let edit = document.querySelectorAll("fa-pen-to-square");
+
 let isDisabledSearch;
 eventListeners();
 
@@ -36,7 +38,6 @@ function addTask(e) {
       addUI(newTodo);
       addTodosToStorage(newTodo);
     } else {
-     
     }
 
     clearInput(todoInput, todoContainer);
@@ -53,10 +54,11 @@ function addUI(paramsTodo) {
   element.innerHTML += `
 
   <li class="input-cont">
-     <p class="list-style li-value">${paramsTodo}</p>
+     <p id="edit-p" class="list-style li-value">${paramsTodo}</p>
       <div class="delete-icon">
-          <a href="#">
-              <i class="fa-solid fa-circle-xmark"></i>
+          <a class="editAndDelete" href="#">
+              <i class="fa-solid fa-pen-to-square"></i>
+              <i id="pl-11" class="fa-solid fa-circle-xmark"></i>
           </a>
       </div>
   </li>
@@ -95,13 +97,11 @@ function add_UIFromStorage() {
 
   if (localStorage.getItem("searchKey") || todos.length === 0) {
     searchInput.setAttribute("disabled", "disabled");
-  }else {
+  } else {
     todos.forEach(function (todo) {
       addUI(todo);
     });
   }
-
-  
 }
 
 function deleteValuesFromUIAndStorage(e) {
@@ -111,10 +111,44 @@ function deleteValuesFromUIAndStorage(e) {
     let clickedContent =
       targetSpace.parentElement.parentElement.previousElementSibling.textContent.trim();
     deleteValuesFromStorage(clickedContent);
-    if(getTodosFromStorage().length === 0) {
-      searchInput.setAttribute("disabled","disabled")
+    if (getTodosFromStorage().length === 0) {
+      searchInput.setAttribute("disabled", "disabled");
+    }
+  } else if (targetSpace.className === "fa-solid fa-pen-to-square") {
+    if (
+      targetSpace.parentElement.parentElement.previousElementSibling
+        .contentEditable === "false"
+    ) {
+      targetSpace.parentElement.parentElement.previousElementSibling.contentEditable = true;
+      targetSpace.parentElement.parentElement.previousElementSibling.addEventListener(
+        "keyup",
+        function (e) {
+          if (e.key === "Enter") {
+            targetSpace.parentElement.parentElement.previousElementSibling.contentEditable = false;
+            editValueFromStorageAsyncUI(
+              targetSpace.parentElement.parentElement.previousElementSibling.textContent.trim()
+            );
+          }
+        }
+      );
+
+      editValueFromStorageAsyncUI(
+        targetSpace.parentElement.parentElement.previousElementSibling.textContent.trim()
+      );
+    } else {
+      targetSpace.parentElement.parentElement.previousElementSibling.contentEditable = false;
     }
   }
+}
+
+function editValueFromStorageAsyncUI(paramsTextContent) {
+  let lists = Array.from(document.querySelectorAll(".list-style.li-value")).map(
+    (li) => li.textContent.trim()
+  );
+
+  let tasks = [...lists];
+
+  localStorage.setItem("todos", JSON.stringify(tasks));
 }
 
 function deleteValuesFromStorage(paramsTextContent) {
@@ -153,7 +187,7 @@ function sortTodosIfDefined() {
         addUI(todo);
       });
     }
-  } 
+  }
 }
 
 function filterData() {
@@ -196,3 +230,7 @@ function clearUIAndStorage() {
     alert("true choise build your future");
   }
 }
+const ol = document.querySelector("ol")
+new Sortable(ol,{
+  Animation:300
+})
